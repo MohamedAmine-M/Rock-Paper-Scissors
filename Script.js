@@ -1,7 +1,16 @@
-function startOver(){
+var RoundsNumber= parseInt(prompt("How Many Rounds Do you Want to play?"));
+if((RoundsNumber%2)===0){
+    RoundsNumber=RoundsNumber+1;
+    alert("Rounds Must be an odd Number, the number of rounds was automatically set to "+RoundsNumber );
+};
+
+
+function startOver(RoundsNumber){
+    var rePlay = document.getElementById("again");
+    rePlay.style.visibility="hidden";
     var UserScoreElement = document.getElementById("UserScore").innerText;
     var ComputerScoreElement = document.getElementById("ComputerScore").innerText;    
-    if((parseInt(UserScoreElement)+parseInt(ComputerScoreElement))==5){ 
+    if((parseInt(UserScoreElement)+parseInt(ComputerScoreElement))== RoundsNumber){ 
         if(parseInt(UserScoreElement) > parseInt(ComputerScoreElement)){
             alert("User Is The Winner");
             location.reload();
@@ -17,20 +26,21 @@ function startOver(){
     var scissors = document.getElementById('Scissors'); //1
     var winner = document.getElementById('winner');
     winner.innerText = "";
+    
     rock.style.visibility ="inherit";
     paper.style.visibility ="inherit";
     scissors.style.visibility ="inherit";
 }
 //----------------------------------------------------------------------------------------------------------------//
 function start(user){
-    var rePlay = document.getElementById("again");
-    rePlay.style.visibility = "inherit";
+
     var computerChoice = computerSelection();
     var userChoice = user;
     var rock = document.getElementById('Rock'); //2
     var paper = document.getElementById('paper'); //0
     var scissors = document.getElementById('Scissors'); //1
     game(userChoice, computerChoice, rock, paper, scissors);
+
 }
 //----------------------------------------------------------------------------------------------------------------//
 function computerSelection(){    
@@ -84,13 +94,15 @@ function game(userChoice, computerChoice){
     var playerTurn = document.getElementById('turn');
     var UserScoreElement = document.getElementById("UserScore");
     var ComputerScoreElement = document.getElementById("ComputerScore");
+    var rePlay = document.getElementById("again");
     var userScore = parseInt(UserScoreElement.innerText);
     var computerScore = parseInt(ComputerScoreElement.innerText);
     playerTurn.innerText = "Computer Turn";
     var scores = playRound(userChoice, computerChoice,userScore, computerScore);
-    setTimeout(function(){UserScoreElement.innerText = userScore;ComputerScoreElement.innerText = computerScore;playerTurn.innerText = "";} ,2000);
+    setTimeout(function(){UserScoreElement.innerText = userScore;ComputerScoreElement.innerText = computerScore;playerTurn.innerText = "";rePlay.style.visibility = "inherit";} ,2000);
     userScore = parseInt(scores[0]);
     computerScore = parseInt(scores[1]);
+    
 };
 //----------------------------------------------------------------------------------------------------------------//
 
