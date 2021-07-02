@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rock-Paper-Scissors</title>
-    <script src="Script.js"></script>
+    <script async src="Script.js"></script>
 </head>
 <body>
-    <h1>Check The Console</h1>
+    <div id="Title"><h1>Rock Paper Scissors</h1></div>
+    <div id="Score_Box"> 
+        <table>
+            <tr>
+                <th>User Score</th>
+                <th>Computer Score</th>
+            </tr>
+            <tr>
+                <td id="UserScore">0</td>
+                <td id="ComputerScore">0</td>
+            </tr>
+        </table>
+        <br>
+        <br>
+    </div>
+    <div id="winnerText"><h2 id="winner"></h2></div>
+    <div id="playZone">
+        <button id="Rock" onclick="start(2)"></button> <br>
+        <button id="paper" onclick="start(0)" ></button>
+        <button id="Scissors" onclick="start(1)"></button><br>
+        <button id="again" onclick="startOver()">Play Again</button>
+        <h2 id="turn"></h2>
+    </div>
+    
 </body>
 </html>

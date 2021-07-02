@@ -1,0 +1,72 @@
+body{
+    background-color:#383738;
+}
+#Title{
+    margin-left: auto;
+    margin-right: auto;
+    width: auto; 
+    color: white;
+}
+h1{
+    text-align: center;
+}
+#start{
+    height: 40px;
+    width: 100px;
+}
+table{
+    color: white;
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 400px;
+    font-size: 30px;
+}
+#playZone{
+    text-align: center;
+}
+#Rock{
+    background:url(Rock.png) no-repeat;
+    width: 200px;
+    height: 170px;
+    border: none;
+    margin: 25px;
+}
+
+#Rock:hover{
+    border: white dotted 1px ;
+}
+#paper{
+    background:url(Paper.png) no-repeat;
+    width: 200px;
+    height: 170px;
+    border: none;
+    margin: 25px;
+}
+#again{
+    visibility: hidden;
+}
+#paper:hover{
+    border: white dotted 1px ;
+}
+#Scissors{
+    background:url(Scissors.png) no-repeat;
+    width: 200px;
+    height: 170px;
+    border: none;
+    margin: 25px;
+}
+#Scissors:hover{
+    border: white dotted 1px ;
+}
+#winnerText{
+    margin-left: auto;
+    margin-right: auto;
+    width: auto; 
+    color: white;
+}
+h2{
+    text-align: center;
+    color: white;
+}
